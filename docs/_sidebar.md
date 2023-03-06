@@ -1,18 +1,23 @@
 
-- [首页](/README.md)
-
-- [html/css](/README.md)
+- [首页 :cn:](/README.md)
+- html/css
     - [description](/html/description.md)
     - [html](/html/html.md)
     - [css](/html/css.md)
-- [javascript](/README.md)
+- javascript
     - [js](/javascript/js.md)
     - [vue](/javascript/vue.md)
     - [正则](/javascript/正则.md)
-- [http](/README.md)
+- http
+    - [description](/http/description.md)
     - [http](/http/http.md)
     - [AJAX](/http/AJAX.md)
-- [computer](/README.md)
+    - [跨域](/http/cross.md)
+    - [storage](/http/storage.md)
+- computer
     - [线程](/computer/线程.md)
-- [treasure](/README.md)
+- treasure
     - [new](/treasure/experience.md)
+- tool
+    - [git](/tool/git.md)
+    - [nvm](/tool/nvm.md)

@@ -1,3 +1,2 @@
-- [html](/README.md)
+- html
   - [description](/html/description.md)
-  - [example](/html/example.md)
