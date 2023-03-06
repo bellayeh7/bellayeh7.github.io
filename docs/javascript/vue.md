@@ -343,4 +343,12 @@ Vue被设计为可以自底向上逐层应用。Vue的核心库只关注视图�
 * 更小：通过摇树优化核心库体积
 * 更容易维护：TypeScript + 模块化
 
+## 32. vue3初始化流程解析
 
+**初始化流程整体思路**
+
+- 基本结构 `creatApp()` `mount()`
+- 挂载 mount
+- 编译 `compile()` `render()`
+- 兼容`options api`和 `setup`
+- 扩展性 `createRenderer`

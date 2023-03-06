@@ -142,3 +142,81 @@
   https://blog.csdn.net/weixin_44296929/article/details/103402051
 
   >小标签之类的小设计
+
+
+## 8. 限制文本溢出
+
+
+- **自动换行**
+
+  ```css
+  word-wrap: break-word;
+  ```
+
+- **强制换行**
+
+  ```css
+  white-space: nowrap;
+  ```
+
+
+- **强制英文单词换行**
+
+  ```css
+  word-break: break-all;
+  ```
+
+- **超出显示省略号**
+
+  ```CSS
+  text-overflow: ellipsis;
+  overflow: hidden;
+  ```
+
+- **多行文本超出显示省略号**
+
+  ```CSS
+  .element {
+      width: 20em;
+      line-height: 1.5em;
+      overflow: hidden;
+      
+      display: -webkit-box;
+      -webkit-line-clamp: 3;  /* 文本不超过3行 */
+      -webkit-box-orient: vertical;
+  }
+  ```
+
+## 9. 模糊/透明效果
+
+- 区域模糊，区域透明
+
+```css
+  .radial-blur {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    filter: blur(3px);
+    mask: no-repeat center;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-size: cover, 1250px 688px;
+    mask-composite: exclude;
+    mask-composite: source-out;
+    // transform: scale(1);
+  }
+
+---css世界-张鑫旭
+```
+
+- element-ui 顶部导航效果
+
+```css
+background-image: radial-gradient(transparent 1px,var(--bg-color) 1px);
+backdrop-filter: saturate(50%) blur(4px);
+```
+
+> element-ui效果：https://element-plus.org/zh-CN/component/button.html
+
+> MDN介绍backdrop-filter: https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-image-repeat
