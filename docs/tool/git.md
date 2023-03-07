@@ -145,6 +145,18 @@ remote add upstream @git.coder.com/example
   git stash show // 后面可以跟着stash名字
   ```
 
+- **6. 初始化git**
+```git init
+    // 创建本地仓库
+  git add -A
+    // 将所有文件提交到暂存区
+  git commit -m "testvue"
+    // 将暂存区文件提交到本地仓库
+  git remote add origin git@github.com:ChenGongWei/testvue.git
+    // 连接GitHub远程仓库
+  git push -u origin master
+    // 将本地仓库的文件推送到GitHub远程仓库中
+```
 
 
 # 3. 提交规范
