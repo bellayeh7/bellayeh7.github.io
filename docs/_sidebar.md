@@ -21,3 +21,4 @@
 - tool
     - [git](/tool/git.md)
     - [nvm](/tool/nvm.md)
+    - [linux](/tool/linux.md)
