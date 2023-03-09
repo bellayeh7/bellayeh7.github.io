@@ -44,3 +44,12 @@
 ## 云服务器
 
 [部署云服务器教程](https://blog.csdn.net/yangxbai/article/details/125439694)
+[前端部署](https://juejin.cn/post/6844904032218120200#heading-0)
+
+
+
+
+## oss对象存储
+[阿里云oss操作](https://blog.csdn.net/qq_38420303/article/details/126627430)
+[发布到OSS-使用jenkins自动发布](https://blog.csdn.net/qq_44930876/article/details/126517672?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-126517672-blog-126627430.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-126517672-blog-126627430.pc_relevant_3mothn_strategy_recovery)
+[]
