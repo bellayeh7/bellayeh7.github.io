@@ -22,4 +22,7 @@
 - tool
     - [git](/tool/git.md)
     - [nvm](/tool/nvm.md)
+    - [python](/tool/python.md)
+    - [vim](/tool/vim.md)
     - [linux](/tool/linux.md)
+    - [mac终端](/tool/mac.md)
