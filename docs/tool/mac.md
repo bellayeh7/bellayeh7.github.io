@@ -10,6 +10,14 @@
 
 - 编辑并保存后，需要执行 `source ~/.zshrc` 或者 `source ~/.bash_profile`
 
+### 之前我用 homebrew 安装了 `python@3.10`
+
+    在`.zshrc`文件内配置：
+    ```
+    #Setting PATH for Python 3.1
+    # export PATH=${PATH}:/Library/Frameworks/Python.framework/Versions/3.10.9/bin
+    # export PATH="$PATH:/opt/homebrew/bin/python3"
+    ```
 
 ## 2. 删除文件/文件夹 (例python)
 

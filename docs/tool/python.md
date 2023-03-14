@@ -1,6 +1,6 @@
 #
 
-# python
+
 
 ## 1. pyenv 常用指令
 
