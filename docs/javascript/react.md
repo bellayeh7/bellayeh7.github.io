@@ -487,3 +487,9 @@ const postsSlice = createSlice({
 });
 
 ```
+
+# 2. 一些hook
+
+> 参考文章 https://juejin.cn/post/7101486767336849421
+
+# 3.
