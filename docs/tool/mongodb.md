@@ -1,20 +1,22 @@
 #
 
-
-## 1. 后台启动MongoDB服务(常驻)
+> 参考：https://juejin.cn/post/7067041813533556744
+## 1. 启动 MongoDB 
 
 `% mongod`
 
 不行的话：
 
 `$./mongod --dbpath=/data/db --fork --logpath=/data/logs`
+- dbpath是存放数据库的路径 --fork是后台启动 logpath是日志路径 这些都不可缺少
 
 或者
 
 `$ sudo mongod -dbpath=/Users/bella/bellaData`
 
+MongoDB 服务器启动后，访问 http://localhost:27017，如果出现这样的结果则表示已经成功：
 
-- dbpath是存放数据库的路径 --fork是后台启动 logpath是日志路径 这些都不可缺少
+![img](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cd52ff14f3514480a1680228bcbbec87~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?)
 
 > Mongo 后台管理 shell
 > :要在 mongo 服务启动之后才能进入shell
