@@ -1713,6 +1713,8 @@ var testUtils = function () {
 
 
 # 42. 浏览器的页面渲染过程
+
+> 查看MDN文档 https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work
 ## 1. 页面生成过程
 1.HTML 被 HTML 解析器解析成 DOM 树；
 2.CSS  被 CSS 解析器解析成 CSSOM 树；
