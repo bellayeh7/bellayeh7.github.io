@@ -25,4 +25,6 @@
     - [python](/tool/python.md)
     - [vim](/tool/vim.md)
     - [linux](/tool/linux.md)
-    - [mac终端](/tool/mac.md)
+    - [mac](/tool/mac.md)
+    - [shell](/tool/shell.md)
+    - [mongodb](/tool/mongodb.md)

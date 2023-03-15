@@ -19,8 +19,15 @@
     # export PATH="$PATH:/opt/homebrew/bin/python3"
     ```
 
-## 2. 删除文件/文件夹 (例python)
+## 2.文件/文件夹控制 (例python)
 
+### 新建目录
+
+> mkdir：创建目录。 
+目录语法参数作用使用实例创建多层目录创建目录并设置权限语法
+> mkdir [-p] dirName 参数 -p 确保目录名称存在，不存在的就建一个，用于创建多层目录。
+
+### 删除文件/文件夹
 > 删除文件夹： ```sudo rm -rf xxx```
 >
 > 删除文件夹： ```rm -rf xxx```
