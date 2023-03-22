@@ -85,7 +85,7 @@
 
  CA 证书中的 Hash 值，其实是用证书的私钥进行加密后的值（证书的私钥不在 CA 证书中）。然后客户端得到证书后，利用证书中的公钥去解密该 Hash 值，得到 Hash-a ；然后再利用证书内的签名 Hash [算法]()去生成一个 Hash-b 。最后比较 Hash-a 和 Hash-b 这两个的值。如果相等，那么证明了该证书是对的，服务端是可以被信任的；如果不相等，那么就说明该证书是错误的，可能被篡改了，浏览器会给出相关提示，无法建立起 HTTPS 连接。除此之外，还会校验 CA 证书的有效时间和域名匹配等。 
 
- ``` 
+ ```js
  // key是证书的私钥，crt是签名的证书(公共)。 
  2_ [www.realtimeinterview.work.key](http://www.realtimeinterview.work.key) 
  -----BEGIN RSA PRIVATE KEY----- 
@@ -194,7 +194,7 @@
  -  线程，有时被称为轻量级进程（LightWeight Process，LWP），是操作系统调度（CPU调度）执行的最小单位。**线程共享所在进程中的内存空间** 
  -  协程，又称微线程，纤程。英文名Coroutine。一句话说明什么是线程：协程是一种用户态的轻量级线程，协程的调度完全由用户控制（进程和线程都是由cpu 内核进行调度）。 
 
- ``` 
+ ```js
  进程与进程之间完全隔离，互不干扰，一个进程崩溃不会影响其他进程，避免一个进程出错影响整个程序 
  进程与进程之间需要传递某些[数据]()的话，就需要通过进程通信管道IPC来传递 
  一个进程中可以并发多个线程，每个线程并行执行不同的任务 
@@ -203,7 +203,7 @@
  当一个进程关闭之后，操作系统会回收该进程的内存空间 
  ```
 
- ``` 
+ ```js
  浏览器从关闭到启动，然后新开一个页面至少需要：1个浏览器进程，1个GPU进程，1个网络进程，和1个渲染进程，一共4个进程； 
  后续如果再打开新的标签页：浏览器进程，GPU进程，网络进程是共享的，不会重新启动，然后默认情况下会为每一个标签页配置一个渲染进程，但是也有例外，比如从A页面里面打开一个新的页面B页面，而A页面和B页面又属于同一站点的话，A和B就共用一个渲染进程，其他情况就为B创建一个新的渲染进程 
  所以，最新的Chrome浏览器包括：1个浏览器主进程，1个GPU进程，1个网络进程，多个渲染进程，和多个插件进程 
@@ -237,7 +237,7 @@
 
  -  3、到**本地域名服务器**去查询，有则结束，否则继续 
 
-   ``` 
+   ```js
    如果你的电脑是直连运营商网络，一般默认设置情况下DNS为DHCP分配到的运营商的服务器地址。 
    如果你的电脑和运营商之间还加了无线或者有线路由，那极有可能路由器本身还内置了一个DNS转发器，这玩意的作用是将发往他所有的DNS请求转发到上层DNS。 
    此时由于路由器本身也接管了下挂电脑的DHCP服务，所以它分配给下面电脑的DNS地址就是它自身，所以你能看到电脑的DNS分配到的可能是192.168.1.1。 
@@ -276,7 +276,7 @@
 
  -  `Symbol` Symbol 是 ES6 引入了一种新的原始[数据]()类型，表示独一无二的值。可用作对象的唯一属性名，这样其他人就不会改写或覆盖你设置的属性值。for···in，object.keys() 不能访问symbol为key的值。可以通过Object.getOwnPropertySymbols访问到 
 
-   ``` 
+   ```js
    let id1 = Symbol('id'); 
    let id2 = Symbol('id'); 
    console.log(id1 == id2) //false 
@@ -288,7 +288,7 @@
 
  ## 3. JavaScript 判断是否为数组 
 
- ``` 
+ ```js
  arr instanceof Array 
  Array.isArray(arr) 
  Object.prototype.toString.call(arr) === '[object Array]' 
@@ -349,7 +349,7 @@
  -  不同点：call的变量参数是一个个参数；apply的变量参数是数组 
  -  bind()改过this后，不执行函数，会返回一个绑定新this的函数 
 
- ``` 
+ ```js
  var obj = {}; 
  function f(x,y) { 
     console.log(this,x,y) 
@@ -359,7 +359,7 @@
  var g = f.bind(obj,1,2) 
  ```
 
- ``` 
+ ```js
  // 分析：这里的bind方***把它的第一个实参绑定给f函数体内的this，所以里的this即指向{x:1}对象； 
  // 从第二个参数起，会依次传递给原始函数，这里的第二个参数2即是f函数的y参数； 
  // 最后调用m(3)的时候，这里的3便是最后一个参数z了，所以执行结果为1+2+3=6 
@@ -389,7 +389,7 @@
 
  ## 10. 异步循环处理 
 
- ``` 
+ ```js
  function muti(num) { 
     return new Promise(resolve => { 
       setTimeout(() => { 
@@ -429,7 +429,7 @@
 
  ## 14. DOM api 
 
- ``` 
+ ```js
  document.createElement('p') 
  divdom.appendChild(pdom) 
  divdom.removeChild(pdom) 
@@ -482,7 +482,7 @@
 
  CommonJs 的 this 是当前模块，ES6 Module的 this 是 undefined 
 
- ``` 
+ ```js
  // commonjs 
  module.exports= (params) => {} 
 
@@ -525,7 +525,7 @@
 
  -  **标记清除[算法]()：(现在大多数浏览器都是基于标记清除[算法]())** 
 
-   ``` 
+   ```js
    垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记。 
    然后，它会去掉环境中的变量以及被环境中的变量引用的标记。而在此之后再被加上标记的变量将被视为准备删除的变量，原因是环境中的变量已经无法访问到这些变量了。 
    最后。垃圾收集器完成内存清除工作，销毁那些带标记的值，并回收他们所占用的内存空间。 
@@ -574,7 +574,7 @@
    -  如果该变量的值被其他的值覆盖了，则引用次数减 1 
    -  当这个值的引用次数变为 0 的时候，说明没有变量在使用，这个值没法被访问了，回收空间，垃圾回收器会在运行的时候清理掉引用次数为 0 的值占用的内存 
 
-   ``` 
+   ```js
    let a = new Object()    // 此对象的引用计数为 1（a引用） 
    let b = a      // 此对象的引用计数是 2（a,b引用） 
    a = null      // 此对象的引用计数为 1（b引用） 
@@ -651,7 +651,7 @@
 
  这里得到一个关键点：二进制无法「用有限的位数」来表示 0.1 和 0.2 
 
- ``` 
+ ```js
  // 判断两个浮点数之间的差值的绝对值有没有超出误差精度： 
  function fn(a, b) { 
   return Math.abs(a - b) < Number.EPSILON 
@@ -660,7 +660,7 @@
 
  ## 27. 类数组转数组 
 
- ``` 
+ ```js
  const arrayLike=document.querySelectorAll('div') 
 
  // 1.扩展运算符 
@@ -675,7 +675,7 @@
 
  async 函数是 Generator 函数的语法糖，Generator+自动执行器 
 
- ``` 
+ ```js
  function readFile(a){ 
    return new Promise(resolve=>{ 
     setTimeout(()=>{ 
@@ -723,7 +723,7 @@
 
  **4. Transform---在读写过程中可以修改和变换[数据]()的Duplex流。** 
 
- ``` 
+ ```js
  const fs = require('fs'); 
 
  // 读取msg.txt中的字符串 hello world 
@@ -783,7 +783,7 @@
 
  Android 4.4之后提供了**evaluateJavascript**来执行JS代码，并且可以获取返回值执行回调： 
 
- ``` 
+ ```js
  String jsCode = String.format("window.showWebDialog('%s')", text); 
  webView.evaluateJavascript(jsCode, new ValueCallback<String>() { 
   @Override 
@@ -795,14 +795,14 @@
 
  iOS的UIWebView使用**stringByEvaluatingJavaScriptFromString**： 
 
- ``` 
+ ```js
  NSString *jsStr = @"执行的JS代码"; 
  [webView stringByEvaluatingJavaScriptFromString:jsStr]; 
  ```
 
  iOS的WKWebView使用**evaluateJavaScript**： 
 
- ``` 
+ ```js
  [webView evaluateJavaScript:@"执行的JS代码" completionHandler:^(id _Nullable response, NSError * _Nullable error) { 
 
  }]; 
@@ -816,7 +816,7 @@
 
  ## 观察者模式 
 
- ``` 
+ ```js
  vm.$emit(event, […args]) // publish 
  vm.$on(event, callback) // subscribe 
  ```
@@ -865,7 +865,7 @@
 
  ## 4. 定义数组字符串 
 
- ``` 
+ ```js
  type Foo= Array<string>; 
  interface Bar { 
     baz: Array<{ name: string, age: number}> 
@@ -909,7 +909,7 @@
  -  computed有缓存，data不变则不会重新计算 
  -  watch深度监听： 
 
- ``` 
+ ```js
  target: { 
     handler(old,val) { 
       // watch监听引用类型，拿不到oldvalue 
@@ -942,7 +942,7 @@
 
  ## 7. 兄弟组件通信 
 
- ``` 
+ ```js
  //event bus 
  import Vue from 'vue' 
  export default new Vue() 
@@ -962,10 +962,10 @@
 
  ## 9. 具名插槽 
 
- ``` 
- // child 
+ ```html
+ <!-- child  -->
  <slot name="a"> 
- // parent 
+ <!-- parent  -->
  <SlotCom> 
     <template v-slot:a>xxx</template> 
  </SlotCom> 
@@ -975,7 +975,7 @@
 
  -  用于异步加载大size组件,v-if为false时不会加载该组件 
 
- ``` 
+ ```js
  components: { 
     Com: () => import('../Com.vue') 
  } 
@@ -1001,7 +1001,7 @@
 
  -  history模式 
 
- ``` 
+ ```js
  // nginx 配置 
  location / { 
   try_files $uri $uri/ /index.html; 
@@ -1012,13 +1012,13 @@
 
  -  hash模式 
 
- ``` 
+ ```js
 window.onhashchange=(event => {event.oldURL; event.newURL}) 
  ```
 
  -  history模式 
 
- ``` 
+ ```js
 // 用pushstate方法，浏览器不会刷新页面 
 // 向当前浏览器会话的历史堆栈中添加一个状态（state）。 
 history.pushState(state,'', url) 
@@ -1060,13 +1060,14 @@ window.onpopstate = event => {event.state; location.pathname}
 
  -  极简版本 
 
- ``` 
+ ```html
  <main> 
   <p>请输入:</p> 
   <input type="text" id="input"> 
   <p id="p"></p> 
  </main> 
-
+ ```
+ ```js
  const obj = {}; 
  Object.defineProperty(obj, 'txt', { 
   get: function() { 
@@ -1086,7 +1087,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  -  完整版本 
 
- ``` 
+ ```html
  // < https://juejin.cn/post/6844903589278646285> 
  <!DOCTYPE html> 
  <head> 
@@ -1244,7 +1245,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  -  Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，Proxy是代理在对象级别的，defineProperty是代理到静态的值级别 
 
- ``` 
+ ```js
  var obj = new Proxy({}, { 
   get: function (target, propKey, receiver) { 
    console.log(`getting ${propKey}!`); 
@@ -1305,7 +1306,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  import { onMounted } from 'vue'; 
 
- ``` 
+ ```js
  export default { 
     setup() { 
       onMounted(() => {xxxx}) 
@@ -1354,7 +1355,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  -  emits属性: 规范化 
 
-   ``` 
+   ```js
    export default { 
       emits: ['onChangeData'], 
       setup(props, {emit}) { 
@@ -1404,7 +1405,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 1. 封装组件集成原生组件的属性 
 
- ``` 
+ ```js
   interface PinProps extends React.ComponentProps<typeof Rate> {} 
  ```
 
@@ -1412,7 +1413,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  当我们将这个函数引用赋值给某个其他变量并使用这个新的函数引用去调用该函数时，我们在 `display()` 中获得了不同的`this`值。 
 
- ``` 
+ ```js
  var name = "uh oh! global"; 
  var outerDisplay = obj.display; 
  outerDisplay(); // uh oh! global 
@@ -1437,13 +1438,13 @@ window.onpopstate = event => {event.state; location.pathname}
 
  -  父组件z-index太低 
 
- ``` 
+ ```js
  ReactDOM.createPortal(<div></div>, document.body) 
  ```
 
  ## 6. 异步组件 
 
- ``` 
+ ```js
  const Home = React.lazy(() => import('views/home/home')); 
  ```
 
@@ -1461,7 +1462,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  -  普通使用： 异步 
 
-   ``` 
+   ```js
    this.setState({ 
       count: count + 1 
    }, () => {callbackFunc() //解决异步问题}) 
@@ -1519,9 +1520,8 @@ window.onpopstate = event => {event.state; location.pathname}
 
  这样子直接看好像也还是很明白 ，那先上个例子： 
 
- ``` 
+ ```js
  #nav-global > ul > li > a.nav-link 
- 复制代码 
  ```
 
  套用上面的[算法]()，依次求出 `A` `B` `C` `D` 的值： 
@@ -1535,7 +1535,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  为了熟悉掌握优先级[算法]() ，我们再来做一些练习： 
 
- ``` 
+ ```js
  li                 /* (0, 0, 0, 1) */ 
  ul li                /* (0, 0, 0, 2) */ 
  ul ol+li              /* (0, 0, 0, 3) */ 
@@ -1576,7 +1576,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 项目的属性 
 
- ``` 
+ ```js
  order 定义项目的排列顺序。数值越小，排列越靠前，默认为0。 
  flex-grow 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 
  flex-shrink 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。 
@@ -1585,7 +1585,7 @@ window.onpopstate = event => {event.state; location.pathname}
  align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性 
  ```
 
- ``` 
+ ```css
  .item { 
   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] 
  } 
@@ -1619,8 +1619,8 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 6. 用css画个三角形 
 
- ``` 
- div{ 
+ ```css
+ div { 
     width: 0; 
     height: 0; 
     border-bottom: 200px solid #000000; 
@@ -1666,7 +1666,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 清除浮动 
 
- ``` 
+ ```css
  .clearfix:after { 
    content: ''; 
    height: 0; 
@@ -1677,7 +1677,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 响应式 
 
- @media screen and (max-width: 768px){} 
+ - @media screen and (max-width: 768px){} 
 
  ## 11. rem 移动端布局原理 
 
@@ -1685,7 +1685,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
 ##  12. Grid布局 
 
- ``` 
+ ```css
  .container { 
   display: grid; 
   grid-template-columns: 100px 100px 100px; 
@@ -1710,7 +1710,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 1. 深拷贝 
 
- ``` 
+ ```js
  function deepClone(obj = {}) { 
     //等同于 obj === null || obj === undefined 
     if(typeof obj !== 'object' || obj == null) { 
@@ -1734,7 +1734,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 2. 手写bind函数 
 
- ``` 
+ ```js
  Function.prototype.bind = function(context, ...args) { 
   var self = this; 
   return function F() { 
@@ -1749,7 +1749,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 3. 手写apply 
 
- ``` 
+ ```js
  Function.prototype.apply = function(context = window, args) { 
   const fn = Symbol('fn'); 
   context[fn] = this; 
@@ -1764,7 +1764,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 4. 手写new 
 
- ``` 
+ ```js
  function mynew(Func, ...args) { 
    // 1.创建一个新对象 
    const obj = {} 
@@ -1779,7 +1779,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 5. 手写Map 
 
- ``` 
+ ```js
  Array.prototype._map = function (fn, thisArr) { 
     if (this == undefined) { 
      throw new TypeError('this is null or not undefined'); 
@@ -1798,7 +1798,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 6. 手写reduce 
 
- ``` 
+ ```js
  Array.prototype.myReduce = function (cb, initialValue) { 
   const array = this//获取数组 
   let acc = initialValue || array[0]//acc相当于pre 
@@ -1813,7 +1813,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 7. 函数珂里化 
 
- ``` 
+ ```js
  function add() { 
   const _args = [...arguments]; 
   function fn() { 
@@ -1829,7 +1829,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 8. 手写JSONP 
 
- ``` 
+ ```js
  const jsonp = ({ url, params, callbackName }) => { 
   const generateUrl = () => { 
    let dataSrc = ''; 
@@ -1857,7 +1857,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  触发高频事件后n秒内函数只会执行一次,如果n秒内高频事件再次触发,则重新计算时间。 
 
- ``` 
+ ```js
  const debounce = (fn, time) => { 
   let timeout = null; 
   return function() { 
@@ -1873,7 +1873,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  高频事件触发,但n秒内只会执行一次,所以节流会稀释函数的执行频率。 
 
- ``` 
+ ```js
 
  const throttle = (fn, time) => { 
   let flag = true; 
@@ -1890,7 +1890,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 11. Promise 
 
- ``` 
+ ```js
  const PENDING = 'PENDING';   // 进行中 
  const FULFILLED = 'FULFILLED'; // 已成功 
  const REJECTED = 'REJECTED';  // 已失败 
@@ -2041,7 +2041,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 12. 手写Ajax 
 
- ``` 
+ ```js
  const getJSON = function(url) { 
   return new Promise((resolve, reject) => { 
    const xhr = new XMLHttpRequest(); 
@@ -2062,7 +2062,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 13. 手写instanceof 
 
- ``` 
+ ```js
  function instanceOf(left, right) { 
    let proto = left.__proto__ 
    while (true) { 
@@ -2077,7 +2077,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 14. 虚拟Dom转真实Dom 
 
- ``` 
+ ```js
  // 真正的渲染函数 
  function _render(vnode) { 
   // 如果是数字类型转化为字符串 
@@ -2105,7 +2105,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 15. DOM2JSON 
 
- ``` 
+ ```js
  function dom2Json(domtree) { 
   let obj = {}; 
   obj.name = domtree.tagName; 
@@ -2117,7 +2117,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 16. 手写Compose 
 
- ``` 
+ ```js
  function compose(...fn) { 
   if (!fn.length) return (v) => v; 
   if (fn.length === 1) return fn[0]; 
@@ -2131,7 +2131,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 17. 自动重试的Promise 
 
- ``` 
+ ```js
  Promise.retry = (fun, limit = 5) => { 
    return new Promise((resolve, reject) => { 
      let __num = 1; 
@@ -2156,7 +2156,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 18. 大数相加 
 
- ``` 
+ ```js
  let a = "9007199****40991"; 
  let b = "1234567899999999999"; 
 
@@ -2184,7 +2184,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 19. 千分位 
 
- ``` 
+ ```js
  function toThousandsNum(num) { 
      var num = (num || 0).toString(),result = ''; 
      while (num.length > 3) { 
@@ -2202,7 +2202,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 20. 发布订阅 
 
- ``` 
+ ```js
  class EventPubSub{ 
    constructor(){ 
      this.event = {}; 
@@ -2251,7 +2251,7 @@ window.onpopstate = event => {event.state; location.pathname}
  1. 创建了一个对象； 
  1. 将传递的参数作为原型。 
 
- ``` 
+ ```js
  function inherit[Proto]()type(child, parent) { 
    let prototype = Object.create(parent.prototype) 
    prototype.constructor = child 
@@ -2262,7 +2262,7 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 22. 事件代理 
 
- ``` 
+ ```js
  window.onload = function(){ 
  var oUl = document.getElementById("ul1"); 
  oUl.onclick = function(ev){ 
@@ -2278,79 +2278,144 @@ window.onpopstate = event => {event.state; location.pathname}
 
  # 【8】高频[算法题]() 】】】】】】
 
- ## **[无重复字符的最长子串]( https://[leetcode]()-cn.com/problems/longest-substring-without-repeating-characters/)** 
+ ## **[无重复字符的最长子串](https://[leetcode]()-cn.com/problems/longest-substring-without-repeating-characters/)** 
+
+  `https://[leetcode]()-cn.com/problems/longest-substring-without-repeating-characters/`
 
  ## **[相交[链表]()]( https://[leetcode]()-cn.com/problems/intersection-of-two-linked-lists/)** 
 
+  `https://[leetcode]()-cn.com/problems/intersection-of-two-linked-lists/`
  ## **[[二分查找]()]( https://[leetcode]()-cn.com/problems/binary-search/)** 
 
+ `https://[leetcode]()-cn.com/problems/binary-search/`
  ## **[[两数之和]()]( https://[leetcode]()-cn.com/problems/two-sum/)** 
+
+ `https://[leetcode]()-cn.com/problems/two-sum/`
 
  ## **[[反转链表]()]( https://[leetcode]()-cn.com/problems/reverse-linked-list/)** 
 
+ `https://[leetcode]()-cn.com/problems/reverse-linked-list/`
+
  ## **[环形[链表]()]( https://[leetcode]()-cn.com/problems/linked-list-cycle/)** 
+
+ `https://[leetcode]()-cn.com/problems/linked-list-cycle/`
 
  ## **[[二叉树]()的中序遍历]( https://[leetcode]()-cn.com/problems/binary-tree-inorder-traversal/)** 
 
- ## **[三数之和]( https://[leetcode]()-cn.com/problems/3sum/)** 
+ `https://[leetcode]()-cn.com/problems/binary-tree-inorder-traversal/`
+
+ ## **[三数之和]( https://[leetcode]()-cn.com/problems/3sum/)**
+
+ `https://[leetcode]()-cn.com/problems/3sum/` 
 
  ## **[[二叉树]()的层序遍历]( https://[leetcode]()-cn.com/problems/binary-tree-level-order-traversal/)** 
 
+ `https://[leetcode]()-cn.com/problems/binary-tree-level-order-traversal/`
+
  ## **[最大子序和]( https://[leetcode]()-cn.com/problems/maximum-subarray/)** 
+
+ `https://[leetcode]()-cn.com/problems/maximum-subarray/`
 
  ## **[[斐波那契数列]()]( https://[leetcode]()-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/)** 
 
+ `https://[leetcode]()-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/`
+
  ## **[翻转[二叉树]()]( https://[leetcode]()-cn.com/problems/invert-binary-tree/)** 
 
- ## **[[链表]()中倒数第k个节点]( https://[leetcode]()-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)** 
+ `https://[leetcode]()-cn.com/problems/invert-binary-tree/`
+
+ ## **[[链表]()中倒数第k个节点]( https://[leetcode]()-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)**
+
+ `https://[leetcode]()-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/` 
 
  ## **[两数相加]( https://[leetcode]()-cn.com/problems/add-two-numbers/)** 
 
+ `https://[leetcode]()-cn.com/problems/add-two-numbers/`
+
  ## **[[排序]()数组]( https://[leetcode]()-cn.com/problems/sort-an-array/)** 
+
+ `https://[leetcode]()-cn.com/problems/sort-an-array/`
 
  ## **[合并两个有序[链表]()]( https://[leetcode]()-cn.com/problems/merge-two-sorted-lists/)** 
 
+ `https://[leetcode]()-cn.com/problems/merge-two-sorted-lists/`
+
  ## **[[最大数]()]( https://[leetcode]()-cn.com/problems/largest-number/)** 
+
+ `https://[leetcode]()-cn.com/problems/largest-number/`
 
  ## **[只出现一次的数字]( https://[leetcode]()-cn.com/problems/single-number/)** 
 
+ `https://[leetcode]()-cn.com/problems/single-number/`
+
  ## **[[最长公共前缀]()]( https://[leetcode]()-cn.com/problems/longest-common-prefix/)** 
+
+ `https://[leetcode]()-cn.com/problems/longest-common-prefix/`
 
  ## **[移动零]( https://[leetcode]()-cn.com/problems/move-zeroes/)** 
 
+ `https://[leetcode]()-cn.com/problems/move-zeroes/`
+
  ## **[[螺旋矩阵]()]( https://[leetcode]()-cn.com/problems/spiral-matrix/)** 
+
+ `https://[leetcode]()-cn.com/problems/spiral-matrix/`
 
  ## **[爬楼梯]( https://[leetcode]()-cn.com/problems/climbing-stairs/)** 
 
+ `https://[leetcode]()-cn.com/problems/climbing-stairs/`
  ## **[[最长回文子串]()]( https://[leetcode]()-cn.com/problems/longest-palindromic-substring/)** 
+
+ `https://[leetcode]()-cn.com/problems/longest-palindromic-substring/`
 
  ## **[有效的括号]( https://[leetcode]()-cn.com/problems/valid-parentheses/)** 
 
+ `https://[leetcode]()-cn.com/problems/valid-parentheses/`
+
  ## **[删除[链表]()的倒数第 N 个结点]( https://[leetcode]()-cn.com/problems/remove-nth-node-from-end-of-list/)** 
+
+ `https://[leetcode]()-cn.com/problems/remove-nth-node-from-end-of-list/`
 
  ## **[删除[排序]()[链表]()中的重复元素 II]( https://[leetcode]()-cn.com/problems/remove-duplicates-from-sorted-list-ii/)** 
 
+ `https://[leetcode]()-cn.com/problems/remove-duplicates-from-sorted-list-ii/`
+
  ## **[最长连续递增序列]( https://[leetcode]()-cn.com/problems/longest-continuous-increasing-subsequence/)** 
+
+ `https://[leetcode]()-cn.com/problems/longest-continuous-increasing-subsequence/`
 
  ## **[最小栈]( https://[leetcode]()-cn.com/problems/min-stack/)** 
 
+ `https://[leetcode]()-cn.com/problems/min-stack/`
+
  ## **[最长重复子数组]( https://[leetcode]()-cn.com/problems/maximum-length-of-repeated-subarray/)** 
+
+ `https://[leetcode]()-cn.com/problems/maximum-length-of-repeated-subarray/`
 
  ## **[验证回文串]( https://[leetcode]()-cn.com/problems/valid-palindrome/)** 
 
+ `https://[leetcode]()-cn.com/problems/valid-palindrome/`
+
  ## **[[买卖股票的最佳时机]()]( https://[leetcode]()-cn.com/problems/best-time-to-buy-and-sell-stock/)** 
+
+ `https://[leetcode]()-cn.com/problems/best-time-to-buy-and-sell-stock/`
 
  ## **[[最长递增子序列]()]( https://[leetcode]()-cn.com/problems/longest-increasing-subsequence/)** 
 
+ `https://[leetcode]()-cn.com/problems/longest-increasing-subsequence/`
+
  ## **[单词拆分]( https://[leetcode]()-cn.com/problems/word-break/)** 
 
+ `https://[leetcode]()-cn.com/problems/word-break/`
+
  ## **[对称[二叉树]()]( https://[leetcode]()-cn.com/problems/symmetric-tree/)** 
+
+ `https://[leetcode]()-cn.com/problems/symmetric-tree/`
 
  ## 最长增长子序列 
 
  []( https://[leetcode]()-cn.com/problems/longest-increasing-subsequence/)< https://[leetcode]()-cn.com/problems/longest-increasing-subsequence/> 
 
- ``` 
+ ```js
  var lengthOfLIS = function (nums) { 
    const dp = new Array(nums.length).fill(1); 
    for (let i = 0; i < nums.length; i++) { 
@@ -2369,9 +2434,12 @@ window.onpopstate = event => {event.state; location.pathname}
 
  ## 基本计算器 
 
- []( https://[leetcode]()-cn.com/problems/basic-calculator-ii/)< https://[leetcode]()-cn.com/problems/basic-calculator-ii/> 
+ []( https://[leetcode]()-cn.com/problems/basic-calculator-ii/)
+ `https://[leetcode]()-cn.com/problems/basic-calculator-ii/`
 
- ``` 
+ ---
+
+ ```js
  var calculate = function (s) { 
    s = s.trim() 
    const stack = [] 
