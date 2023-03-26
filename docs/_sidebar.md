@@ -28,5 +28,5 @@
     - [mac](/tool/mac.md)
     - [shell](/tool/shell.md)
 - backEnd
-    - [mongodb](/backEnd/mongodb.md)
+    - [mongodb](/backEnd/mongo.md)
     - [koa](/backEnd/koa.md)
