@@ -59,6 +59,16 @@
   |---|---|
   |`$bit`| 执行按位 `AND`，`OR` 和 `XOR` 整数值的更新。|
 
+
+## 2. query selectors 文档
+
+> https://www.mongodb.com/docs/manual/reference/operator/query/
+
+## 3. 基本查询/高级查询
+
+> https://juejin.cn/post/6844903808183730190
+
+-----
 # 入门
 
 > 参考：https://juejin.cn/post/7067041813533556744
