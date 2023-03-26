@@ -1,7 +1,6 @@
 
 - [首页 :cn:](/README.md)
 - html/css
-    - [description](/html/description.md)
     - [html](/html/html.md)
     - [css](/html/css.md)
 - javascript
