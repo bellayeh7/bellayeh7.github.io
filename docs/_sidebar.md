@@ -1,8 +1,14 @@
 
 - [首页 :cn:](/README.md)
-- html/css
-    - [html](/html/html.md)
-    - [css](/html/css.md)
+- tool
+    - [git](/tool/git.md)
+    - [nvm](/tool/nvm.md)
+    - [python](/tool/python.md)
+    - [vim](/tool/vim.md)
+    - [linux](/tool/linux.md)
+    - [mac](/tool/mac.md)
+    - [shell](/tool/shell.md)
+    - [blender](/tool/blender.md)
 - javascript
     - [js](/javascript/js.md)
     - [react](/javascript/react.md)
@@ -18,14 +24,9 @@
     - [线程](/computer/线程.md)
 - treasure
     - [new](/treasure/experience.md)
-- tool
-    - [git](/tool/git.md)
-    - [nvm](/tool/nvm.md)
-    - [python](/tool/python.md)
-    - [vim](/tool/vim.md)
-    - [linux](/tool/linux.md)
-    - [mac](/tool/mac.md)
-    - [shell](/tool/shell.md)
 - backEnd
     - [mongodb](/backEnd/mongo.md)
     - [koa](/backEnd/koa.md)
+- html/css
+    - [html](/html/html.md)
+    - [css](/html/css.md)
