@@ -2,6 +2,22 @@
 
 
 
+# python
+## python 常用指令
+
+- 进入、退出`python`
+```python
+python>>>进入
+quit()>>>退出
+```
+
+- 查看路径
+```python
+import sys
+print(sys.path)
+```
+
+# pyenv
 ## 1. pyenv 常用指令
 
 ```
