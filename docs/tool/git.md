@@ -1,4 +1,18 @@
 #
+
+# 合并dev分支
+- 1. `git branch dev` 创建分支
+- 2. `git checkout dev` 切换分支
+- 3. 拉取dev分支代码
+  - 方法一：`git pull origin dev`
+  - 方法二：
+  ```js
+  git branch --set-upstream-to=origin/dev
+  git push
+  ```
+- 4. 切换到自己的分支  `git checkout xxx`
+- 5. 合并你们的分支 `git merge dev`
+- 6. 提交代码 `git push -u origin xxx`
 # 常用指令
 config --list  
 config user.email 23@cc.com
