@@ -33,7 +33,7 @@ nvm uninstall 14.20.1
 |npm update taco --save|yarn upgrade taco|更新某个依赖项目|
 |npm install taco --global|yarn global add taco|安装某个全局依赖项目|
 |npm publish/login/logout|yarn publish/login/logout|发布/登录/登出，一 系列NPM Registry操作|
-|npm init|yarn init|初始化某个项目|
+|npm run build|yarn build|打包|
 
 
 # 更多关于 node-gyp 本地编译环境问题

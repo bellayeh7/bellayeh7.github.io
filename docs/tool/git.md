@@ -13,6 +13,16 @@
 - 4. 切换到自己的分支  `git checkout xxx`
 - 5. 合并你们的分支 `git merge dev`
 - 6. 提交代码 `git push -u origin xxx`
+
+# 给dev分支某版本打tag
+
+```js
+git checkout dev
+git tag -f v1.0.3
+git log
+git push origin v1.0.3
+```
+
 # 常用指令
 config --list  
 config user.email 23@cc.com
