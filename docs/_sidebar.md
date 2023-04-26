@@ -1,5 +1,7 @@
 
 - [首页 :cn:](/README.md)
+- 3D
+    - [threejs](/3D/threejs.md)
 - tool
     - [git](/tool/git.md)
     - [nvm](/tool/nvm.md)
@@ -9,6 +11,13 @@
     - [mac](/tool/mac.md)
     - [shell](/tool/shell.md)
     - [blender](/tool/blender.md)
+- computer
+    - [线程](/computer/线程.md)
+- backEnd
+    - [mongodb](/backEnd/mongo.md)
+    - [koa](/backEnd/koa.md)
+- treasure
+    - [new](/treasure/experience.md)
 - javascript
     - [js](/javascript/js.md)
     - [react](/javascript/react.md)
@@ -20,13 +29,6 @@
     - [AJAX](/http/AJAX.md)
     - [跨域](/http/cross.md)
     - [storage](/http/storage.md)
-- computer
-    - [线程](/computer/线程.md)
-- treasure
-    - [new](/treasure/experience.md)
-- backEnd
-    - [mongodb](/backEnd/mongo.md)
-    - [koa](/backEnd/koa.md)
 - html/css
     - [less_sass](/html/less_scss.md)
     - [html](/html/html.md)
