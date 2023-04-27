@@ -325,9 +325,10 @@ HTTPS 协议（HyperText Transfer Protocol over Secure Socket Layer）：一般�
 
 
 
-# WebSocket的实现和应用
+# 【8】WebSocket的实现和应用
 
-# 
+# 【9】fetch设置超时断开请求
+https://juejin.cn/post/7021031664037920805
 
 
 
